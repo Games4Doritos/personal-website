@@ -11,26 +11,32 @@ const experiences = [
     title: "President of",
     link: "https://codersforcauses.org/",
     org: "Coders for Causes",
-    date: "(2026 - Present)",
+    date: "2026-",
+  },
+  {
+    title: "Administration Support Officer at",
+    link: "https://www.wa.gov.au/organisation/department-of-local-government-industry-regulation-and-safety",
+    org: "LGIRS",
+    date: "2026-",
+  },
+  {
+    title: "Ordinary Committee Member (Projects) for",
+    link: "https://www.linkedin.com/company/game-development-uwa/",
+    org: "Game Development UWA",
+    date: "2025-",
   },
   {
     title:
       "Local Government Child Safeguarding Project - E-Learning and Online Resources Intern at",
     link: "https://www.wa.gov.au/organisation/department-of-local-government-industry-regulation-and-safety",
     org: "LGIRS",
-    date: "(2026 - Present)",
-  },
-  {
-    title: "Ordinary Committee Member (Projects) for",
-    link: "https://www.linkedin.com/company/game-development-uwa/",
-    org: "Game Development UWA",
-    date: "(2025 - Present)",
+    date: "2026-2026",
   },
   {
     title: "Summer Client Project Volunteer (Fullstack Developer) for",
     link: "https://codersforcauses.org/",
     org: "Coders for Causes",
-    date: "(2025 - 2026)",
+    date: "2025-2026",
   },
 ];
 
@@ -46,19 +52,26 @@ const points: ReactElement[] = [
   <>
     <div className="px-[calc(10%-1.25rem)]">
       {experiences.map((experience, id) => (
-        <div className="text-left pb-5" key={id}>
-          <p className="text-alt text-2xl absolute leading-5">
-            <b>&rarr;</b>
-          </p>
-          <div className="pl-8">
-            {experience.title}
-            <Link href={experience.link} target="_blank" className="mx-1">
-              <b>
-                <u>{experience.org}</u>
-              </b>
-            </Link>
-            <p className="relative inline-block">{experience.date}</p>
-          </div>
+        <div className="flex justify-between pb-5" key={id}>
+          <span className="text-left">
+            <span className="text-alt text-2xl absolute leading-5">
+              <b>&rarr;</b>
+            </span>
+            <span className="pl-8">
+              {experience.title}
+              <Link href={experience.link} target="_blank" className="mx-1">
+                <b>
+                  <u>{experience.org}</u>
+                </b>
+              </Link>
+            </span>
+            <span className="inline-block sm:hidden relative text-alt">
+              <b>&lt; {experience.date} /&gt;</b>
+            </span>
+          </span>
+          <span className="hidden sm:inline-block relative text-alt justify-right text-nowrap">
+            <b>&lt; {experience.date} /&gt;</b>
+          </span>
         </div>
       ))}
     </div>
@@ -104,7 +117,7 @@ export default function About() {
   return (
     <>
       <div className="bg-white text-center p-10 text-5xl ">Who am I?</div>
-      <div className="mx-10">
+      <div className="mx-5 sm:mx-10">
         <div className="relative max-w-7xl mx-auto">
           <p className="bg-white w-36 mx-auto h-20 relative flex shadow-[0_0_1rem_black] -z-1"></p>
           {points.slice(0, points.length - 1).map((point, id) => (

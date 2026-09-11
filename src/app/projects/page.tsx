@@ -57,7 +57,7 @@ export default function Projects() {
           &#32; for all my projects, things I&apos;ve worked on, and coursework!
         </p>
       </div>
-      <div className="flex flex-wrap justify-center p-5">
+      <div className="flex flex-wrap justify-center sm:p-5">
         {projects.map((project, id) => (
           <Link
             href={`/projects/${project.id}`}
