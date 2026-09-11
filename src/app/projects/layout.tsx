@@ -10,7 +10,5 @@ export default function ProjectLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <main>{children}</main>
-  );
+  return <main>{children}</main>;
 }

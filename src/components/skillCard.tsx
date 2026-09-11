@@ -1,46 +1,35 @@
-import 'devicon/devicon.min.css';
-import Link from 'next/link';
+import "devicon/devicon.min.css";
+import Link from "next/link";
 
 export type skill = {
-    name: string;
-    descr: string;
-    icon: string;
-    recent: string;
-}
+  name: string;
+  descr: string;
+  icon: string;
+  recent: string;
+};
 
 interface props {
-    skill: skill
+  skill: skill;
 }
 
-export default function SkillCard({skill}:props){
-    
-
-    return (
-        <div className="skill rounded-xl m-3 p-5 w-72 shadow-[0_0_1rem_grey] hover:scale-105"
-            
+export default function SkillCard({ skill }: props) {
+  return (
+    <div className="skill rounded-xl m-3 p-5 w-72 shadow-[0_0_1rem_grey] hover:scale-105">
+      <h3 className="text-xl text-center p-1">{skill.name}</h3>
+      <p className="">{skill.descr}</p>
+      <p className="mt-5 m-3 text-center">
+        <i className={`devicon-${skill.icon} text-5xl text-alt`} />
+      </p>
+      {skill.recent == "" ? (
+        <></>
+      ) : (
+        <Link
+          className="rounded-xl border p-2 border-black hover:text-shadow-[0_0_1rem_black] skillTooltip"
+          href={`/projects/${skill.recent}`}
         >
-            <h3 className="text-xl text-center p-1">
-                {skill.name}
-            </h3>
-            <p className="">
-                {skill.descr}
-            </p>
-            <p className="mt-5 m-3 text-center">
-                <i className={`devicon-${skill.icon} text-5xl text-alt`}/>
-            </p>
-            {skill.recent == "" ? (
-                <></>
-                ) : 
-                    <Link 
-                        className="rounded-xl border p-2 border-black hover:text-shadow-[0_0_1rem_black] skillTooltip"
-                        href={`/projects/${skill.recent}`}
-                    >
-                        Recent Project
-                    </Link>
-                }
-        </div>
-
-    );
-
-
+          Recent Project
+        </Link>
+      )}
+    </div>
+  );
 }

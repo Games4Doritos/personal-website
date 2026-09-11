@@ -28,11 +28,10 @@
   --animate-propagate: propagation 0.5s infinite ease-in-out;
 
   @keyframes propagation {
-    50%{
+    50% {
       transform: translateY(2.875rem);
-      
     }
-    100%{
+    100% {
       transform: translateY(2rem);
     }
   }
@@ -40,37 +39,35 @@
   @keyframes border {
     0% {
       box-shadow: 0 0 1rem blue;
-      border-color:blue;
+      border-color: blue;
     }
     20% {
       box-shadow: 0 0 1rem green;
-      border-color:green;
+      border-color: green;
     }
     40% {
       box-shadow: 0 0 1rem yellow;
-      border-color:yellow;
+      border-color: yellow;
     }
     60% {
       box-shadow: 0 0 1rem red;
-      border-color:red;
+      border-color: red;
     }
     80% {
       box-shadow: 0 0 1rem purple;
-      border-color:purple;
+      border-color: purple;
     }
     100% {
       box-shadow: 0 0 1rem blue;
-      border-color:blue;
+      border-color: blue;
     }
   }
-
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .skillTooltip {
@@ -79,5 +76,4 @@ body {
 
 .skill:hover .skillTooltip {
   visibility: visible;
-  
 }

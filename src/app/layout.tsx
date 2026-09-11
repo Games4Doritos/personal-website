@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AnimBackground/>
-        <Navbar/>
+        <AnimBackground />
+        <Navbar />
         <main className="overflow-x-hidden">{children}</main>
       </body>
     </html>

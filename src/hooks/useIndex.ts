@@ -1,17 +1,15 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 
-const useIndex = (n:number) => {
+const useIndex = (n: number) => {
+  const [index, setIndex] = useState(0);
 
-    const [index, setIndex] = useState(0);
+  const update = () => {
+    setIndex((index + 1) % n);
+  };
 
-    const update = () => {
-        setIndex((index+1)%n)
-    }
-
-    return {index, update}
-
-}
+  return { index, update };
+};
 
 export default useIndex;
