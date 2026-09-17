@@ -45,7 +45,7 @@ const skills: skill[] = [
     name: "Back-End Development",
     descr: "Creating applications and using APIs in Django and Flask",
     icon: "python-plain",
-    recent: "",
+    recent: "agronomyClub",
   },
   {
     name: "Game Development",
@@ -58,7 +58,8 @@ const skills: skill[] = [
 export default function Page() {
   const { index, update } = useIndex(n);
   const winW = useWindowWidth();
-  const { spamPos, eggPrestige, audioRef } = useSpam(winW);
+  const { spamPos, eggPrestige, audioRef, pressLeftArrow, pressRightArrow } =
+    useSpam(winW);
 
   return (
     <>
@@ -107,6 +108,18 @@ export default function Page() {
             <p className="px-10">
               Alternate between Left and Right arrows to move me!
             </p>
+            <div className="mt-4 lg:hidden">
+              <button onClick={() => pressLeftArrow()}>
+                <div className="p-3 rounded-xl border-alt border text-alt mr-2 text-2xl shadow-[0_0_0.5rem_grey] hover:scale-105">
+                  &lArr;
+                </div>
+              </button>
+              <button onClick={() => pressRightArrow()}>
+                <div className="p-3 rounded-xl border-alt border text-alt text-2xl shadow-[0_0_0.5rem_grey] hover:scale-105">
+                  &rArr;
+                </div>
+              </button>
+            </div>
             <p className="text-[#988933] pb-5">
               {eggPrestige === 0 ? "" : `Egg Prestige: ${eggPrestige}`}
             </p>

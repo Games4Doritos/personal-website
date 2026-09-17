@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 export const projects = [
   {
+    title: "Agronomy Club Website",
+    description:
+      "Acted as the Technical Lead for a team of 13 volunteer developers in developing the new website for the Agronomy Club, from full backend to frontend. The Agronomy Club is an up-and-coming student-led community that supports excellence in agronomic sciences through social events, study initiatives and competitions.",
+    thumbnail: "/agronomyClub.png",
+    link: "https://github.com/codersforcauses/agronomy-club",
+    id: "agronomyClub",
+  },
+  {
     title: "Gravity Bender",
     description:
       "A 3D platform shooter developed in the second UWA Game Jam. Programmed by Me and Joshua Noble (PatronSaintOfEpicGamers), with the music created by transient luminous events",

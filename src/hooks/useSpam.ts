@@ -8,6 +8,31 @@ const useSpam = (winW: number) => {
   const [eggPrestige, setPrestige] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  const pressLeftArrow = () => {
+    const leftArrow = new KeyboardEvent("keydown", {
+      key: "ArrowLeft",
+      code: "ArrowLeft",
+      keyCode: 37,
+      which: 37,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    document.dispatchEvent(leftArrow);
+  };
+
+  const pressRightArrow = () => {
+    const rightArrow = new KeyboardEvent("keydown", {
+      key: "ArrowRight",
+      code: "ArrowRIght",
+      keyCode: 39,
+      which: 39,
+      bubbles: true,
+      cancelable: true,
+    });
+    document.dispatchEvent(rightArrow);
+  };
+
   useEffect(() => {
     setSpam(0);
   }, [winW]);
@@ -43,7 +68,7 @@ const useSpam = (winW: number) => {
     };
   }, [spamPos]);
 
-  return { spamPos, eggPrestige, audioRef };
+  return { spamPos, eggPrestige, audioRef, pressLeftArrow, pressRightArrow };
 };
 
 export default useSpam;
