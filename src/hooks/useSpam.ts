@@ -18,7 +18,7 @@ const useSpam = (winW: number) => {
       cancelable: true,
     });
 
-    document.dispatchEvent(leftArrow);
+    audioRef.current?.dispatchEvent(leftArrow);
   };
 
   const pressRightArrow = () => {
@@ -30,7 +30,7 @@ const useSpam = (winW: number) => {
       bubbles: true,
       cancelable: true,
     });
-    document.dispatchEvent(rightArrow);
+    audioRef.current?.dispatchEvent(rightArrow);
   };
 
   useEffect(() => {

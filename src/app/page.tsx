@@ -93,8 +93,8 @@ export default function Page() {
           )}
         </button>
       </div>
-      <div className="w-full bg-white">
-        <h3 className=" text-center text-4xl pt-10">My Skills</h3>
+      <div className="w-full bg-white pt-10 pb-4">
+        <h3 className=" text-center text-4xl">My Skills</h3>
         <div className="flex justify-center p-5 flex-wrap">
           {skills.map((skill, id) => (
             <SkillCard skill={skill} key={id} />
@@ -108,7 +108,7 @@ export default function Page() {
             <p className="px-10">
               Alternate between Left and Right arrows to move me!
             </p>
-            <div className="mt-4 lg:hidden">
+            <div className="my-4 lg:hidden">
               <button onClick={() => pressLeftArrow()}>
                 <div className="p-3 rounded-xl border-alt border text-alt mr-2 text-2xl shadow-[0_0_0.5rem_grey] hover:scale-105">
                   &lArr;
@@ -120,7 +120,7 @@ export default function Page() {
                 </div>
               </button>
             </div>
-            <p className="text-[#988933] pb-5">
+            <p className="text-[#988933]">
               {eggPrestige === 0 ? "" : `Egg Prestige: ${eggPrestige}`}
             </p>
             <audio ref={audioRef} src={"/tadaCut.mp3"} id={"audio"}></audio>
